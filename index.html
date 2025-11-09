@@ -1,0 +1,26 @@
+<doctype HTML>
+<html>
+  <head>
+    <title>Pilot Choro</title>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmrLN2z0y1M2Dg8hvhfBckywh_kDXQC_k&callback=initMap"> </script>
+    <script>
+// Pilot Choro - 9Nov25 
+function initMap() { alert("at initMap")
+  var map = new google.maps.Map(document.getElementById('map'), { zoom:11, center:{lat:39, lng:-120} } );
+  var kmlLayer = new google.maps.KmlLayer( { map, url:'calneva.kml' } );
+}
+    </script>
+  </head>
+  <body>
+    <table border=1>
+      <tr>
+        <td width=100>
+        <td width=500>
+      </tr>
+      <tr>
+        <td><b>Layers</b>
+        <td><div id=map height=500, width=100%>
+      </tr>
+    </table>
+  </body>
+</html>
