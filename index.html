@@ -35,12 +35,12 @@
         <th> </th>
       </tr>
       <tr>
-        <td width=120px valign=TOP><b>Legend</b>
+        <td width=150px valign=TOP><center><big><b><Legend</b></big></center>
           <p>Layers
             <ul><li>Counties</li></ul>
           <p>Topics
-            <br><input type="checkbox" id="POP"> Total Pouplulation
-            <br><input type="checkbox" id="NHI"> Median HH Income
+            <br><input type="checkbox" id="POP"> Total Population
+            <br><input type="checkbox" id="NHI"> Median HH_Income
         </td>
         <td> <div id="map"></div></td>
       </tr>
@@ -48,6 +48,7 @@
     <!--div id="map"></div -->
     <div id="capture"></div>
     <script>
+      const paramsString = window.location.search; console.log(paramsString)
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/CalNeva-County.kml';
