@@ -59,9 +59,10 @@
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/CalNeva-County.kml';
-      var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
       function initMap() {
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
+        if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
+        if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
         if (paramsString.indexOf("POP")>0) document.getElementById("POP").checked = true;
         if (paramsString.indexOf("MHI")>0) document.getElementById("MHI").checked = true;
         map = new google.maps.Map(document.getElementById('map'), {
