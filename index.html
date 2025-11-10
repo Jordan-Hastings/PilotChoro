@@ -70,7 +70,7 @@
           zoom: 2,
           mapTypeId: 'terrain'
         });
-
+if(paramsString.indexOf("C1")>0) new MapLabel ({position:{lng:-122.09618346, lat:37.6949651289}, fontColor="#ff00ff", fontSize=12, minZoom:10}}
         var kmlLayer = new google.maps.KmlLayer(src, {
           suppressInfoWindows: true,
           preserveViewport: false,
