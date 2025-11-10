@@ -76,7 +76,7 @@
           map: map
         });
 if(paramsString.indexOf("C1")>0 || paramsString.indexOf("A1")>0) 
- new MapLabel ({position:{lng:-122.09618346, lat:37.6949651289}, text:"HI", fontColor:"#ff00ff", fontSize:12, minZoom:10})
+ new MapLabel ({position:{lng:-122.09618346, lat:37.6949651289}, text:"HI", fontColor:"#ff00ff", fontSize:12})
         kmlLayer.addListener('click', function(event) {
           var content = event.featureData.infoWindowHtml;
           var testimonial = document.getElementById('capture');
@@ -87,9 +87,9 @@ if(paramsString.indexOf("C1")>0 || paramsString.indexOf("A1")>0)
     <script
      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDmrLN2z0y1M2Dg8hvhfBckywh_kDXQC_k&callback=initMap">
     </script>
-    <!-- script src='maplabel1.js'> </script -->
+    <script src='maplabel1.js'> </script>
 
-    <script>   
+<!-- script>   
 /**
  * @license
  *
@@ -344,7 +344,7 @@ MapLabel.prototype.onRemove = function() {
   }
 };
 MapLabel.prototype['onRemove'] = MapLabel.prototype.onRemove;
-    </script>
+  </script -->
 
   </body>
 </html>
