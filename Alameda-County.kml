@@ -17,7 +17,7 @@
 <gx:labelVisibility>0</gx:labelVisibility>
 </LineStyle>
 <PolyStyle>
-<color>7fe1ca9e</color>
+<color>7f7f7f9e</color>
 </PolyStyle>
 </Style>
 <Folder id="kml_ft_cb_2018_us_county_5m">
@@ -37,4 +37,5 @@
 </Polygon>
 </Placemark>
 </Folder>
+
 </Document></kml>
