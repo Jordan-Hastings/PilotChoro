@@ -26,7 +26,7 @@
        border: thin solid #333;
        border-left: none;
        }
-    ul { padding-inline-start: 5px; }
+    ul { list-style-type: disc; padding-inline-start: 5px; }
     </style>
   </head>
   <body>
@@ -49,12 +49,12 @@
     <!--div id="map"></div -->
     <div id="capture"></div>
     <script>
-      const paramsString = window.location.search; console.log(paramsString)
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/CalNeva-County.kml';
 
       function initMap() {
+        const paramsString = window.location.search; console.log("at initMap() ", paramsString)
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(-19.257753, 146.823688),
           zoom: 2,
