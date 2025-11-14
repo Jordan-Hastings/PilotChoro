@@ -103,7 +103,9 @@ async function loadGeoJsonFile(url) {
     const data = await response.json();
   //console.log(data.length)
     console.log("JSON data:", data)
-    map.data.addGeoJson(data);
+    map.data.addGeoJson(data); 
+    console.log(map.data.Polygons.length); 
+    console.log(map.data.Polygons[0])
   } catch (e) {
     alert("Not a GeoJSON file!");
   }
