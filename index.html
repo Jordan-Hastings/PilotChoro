@@ -100,6 +100,7 @@ async function loadGeoJsonFile(url) {
 
     // Presume the file is geoJSON:
     const data = await response.json();
+    console.log(data.length)
     console.log("JSON data:", data)
     map.data.addGeoJson(data);
   } catch (e) {
