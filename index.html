@@ -105,7 +105,7 @@ async function loadGeoJsonFile(url) {
     console.log("JSON data:", data)
     map.data.addGeoJson(data); 
     map.data.setStyle((feature) => {alert(feature.getProperty("name")); return {fillColor:'blue', strokeColor:'black', strokeWeight:1}});
-    //map.data.forEach((fc) => {console.log(fc);}) 
+    map.data.forEach((feature) => {alert(feature.getId()); console.log(feature.getProperties())}); 
     // console.log(fc.features[0])}) //overrideStyle(f.features[0], {fillColor:"blue"}))})
   } catch (e) {
     alert("Error processing GeoJSON file!");
