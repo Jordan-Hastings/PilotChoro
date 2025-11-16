@@ -59,13 +59,6 @@
     <!--div id="capture"></div -->
     <!-- script src='https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/calneva.js'> </script -->
     <script>
-      function hideshow(th) {//alert("hideshow "+th.checked+" "+(typeof map.data.getStyle()))
-        map.data.setStyle((feature) => {if (feature.getProperty("Name").indexOf("Tahoe")>0) { //return {fillOpacity:(th.checked?1:0)}})
-        //var style = map.data.getStyle(); alert(typeof style); // map.data.overrideStyle(feature, {fillOpacity:(th.checked?1:0)})
-          map.data.overrideStyle(feature, {zIndex:1, fillColor:'blue', fillOpacity:(th.checked?1:0.1), strokeWeight:0.5})
-          }
-        })
-      }
 const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Alameda County, California',POP:4704,MHI:126.2},
 {Name:'Alpine County, California',POP:5,MHI:110.8},
@@ -187,6 +180,13 @@ console.log(kmlLayer.Polygons[0])
           testimonial.innerHTML = content;
         });
 */
+      }
+      function hideshow(th) {//alert("hideshow "+th.checked+" "+(typeof map.data.getStyle()))
+        map.data.setStyle((feature) => {if (feature.getProperty("Name").indexOf("Tahoe")>0) { //return {fillOpacity:(th.checked?1:0)}})
+        //var style = map.data.getStyle(); alert(typeof style); // map.data.overrideStyle(feature, {fillOpacity:(th.checked?1:0)})
+          map.data.overrideStyle(feature, {zIndex:1, fillColor:'blue', fillOpacity:(th.checked?1:0.1), strokeWeight:0.5})
+          }
+        })
       }
 async function loadGeoJsonFile(url) {
   try {
