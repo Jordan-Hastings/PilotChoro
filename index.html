@@ -45,10 +45,11 @@
         <td width=200px valign=TOP>
           <p><br><center><big><b>Legend</b></big></center>
           <p><u>Layers</u>
-            <ul><li>Counties</li></ul>
-          <p><u>Topics</u>
-            <br><input type="checkbox" id="POP"> Total Population
-            <br><input type="checkbox" id="MHI"> Median HH_Income
+            <br><input type="checkbox" id="LTahoe"> Lake Tahoe
+            <br><input type="checkbox" id="Countys" checked> Countys
+          <p><u>Themes</u>
+            <br><input type="radio" id="POP" name=Theme> Population / SqMi
+            <br><input type="radio" id="MHI" name=Theme> Median HH_Income
         </td>
         <td> <div id="map"></div></td>
       </tr>
@@ -66,8 +67,8 @@
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
-        if (paramsString.indexOf("POP")>0) document.getElementById("POP").checked = true;
-        if (paramsString.indexOf("MHI")>0) document.getElementById("MHI").checked = true;
+        if (paramsString.indexOf("POP")>0) document.getElementById("POP").selected = true;
+        if (paramsString.indexOf("MHI")>0) document.getElementById("MHI").selected = true;
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(37, -120),
           zoom: 6,
