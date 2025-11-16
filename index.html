@@ -67,7 +67,7 @@
       }
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      function initMap() {
+      function initMap() {alert("123")
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
@@ -118,8 +118,8 @@ async function loadGeoJsonFile(url) {
   //console.log(data.length)
   //console.log("JSON data:", data)
     map.data.addGeoJson(data); 
-  //map.data.setStyle((feature) => {alert(feature.getProperty("Name")); return {fillColor:'blue', fillOpacity:0.1, strokeColor:'black', strokeWeight:1}});
-    map.data.setStyle((feature) => { return {clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5}});
+    map.data.setStyle((feature) => { return {fillColor:(feature.getProperty("Name").charAt(0)<"M"?'green':'red'), fillOpacity:0.1, strokeColor:'black', strokeWeight:1}});
+  //map.data.setStyle((feature) => { return {clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5}});
   //map.data.setStyle( { clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5 } );
   //map.data.forEach((feature) => { alert(feature.getId()); console.log(feature.getProperties())}); 
     // console.log(fc.features[0])}) //overrideStyle(f.features[0], {fillColor:"blue"}))})
