@@ -163,12 +163,12 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
           var color = (L==0?"blue":"ivory")
           if (true) { // ?POP chosen
-            color = (pop<500 ? "dodgerblue" : pop>100000 ? "tomato" : pop>50000 ? "orange" : "antiqueWhite")
+            color = (pop<500 ? "dodgerblue" : pop>100000 ? "tomato" : pop>20000 ? "orange" : "antiqueWhite")
           }  
           if (false) { // ?MHI chosen
           //TBW  
           }
-          return {clickable:true, fillColor:color, fillOpacity:0.1, strokeColor:'black', strokeWeight:1}
+          return {clickable:true, fillColor:color, fillOpacity:0.2, strokeColor:'darkGray', strokeWeight:1}
         }
       );
   //map.data.setStyle((feature) => { return {clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5}});
