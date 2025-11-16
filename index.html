@@ -60,8 +60,8 @@
     <script>
       function hideshow(th) { //alert("hideshow "+th.checked)
         map.data.setStyle((feature) => {if (feature.getProperty("Name").indexOf("Tahoe")>0) { //return {fillOpacity:(th.checked?1:0)}})
-          var style = map.data.getStyle(); alert(typeof style); map.data.overrideStyle(feature, {fillOpacity:(th.checked?1:0)})
-        //style.fillColor = 'blue'; style.fillOpacity = (th.checked?1:0); style.strokeWeight = 1; return style
+        //var style = map.data.getStyle(); alert(typeof style); map.data.overrideStyle(feature, {fillOpacity:(th.checked?1:0)})
+          map.data.overrideStyle(feature, {fillColor:'blue', fillOpacity:(th.checked?1:0), strokeWeight:1})
           }
         })
       }
