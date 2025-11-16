@@ -1,4 +1,4 @@
-[{Name:'Lake Tahoe',POP:0,MHI:0},
+const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Alameda County, California',POP:4704,MHI:126.2},
 {Name:'Alpine County, California',POP:5,MHI:110.8},
 {Name:'Amador County, California',POP:197,MHI:81.5},
@@ -73,4 +73,4 @@
 {Name:'Storey County, Nevada',POP:128,MHI:96},
 {Name:'Washoe County, Nevada',POP:202,MHI:85.6},
 {Name:'White Pine County, Nevada',POP:8,MHI:72.3},
-{Name:'Carson City, Nevada',POP:2024,MHI:71.8},]
+{Name:'Carson City, Nevada',POP:2024,MHI:71.8}]
