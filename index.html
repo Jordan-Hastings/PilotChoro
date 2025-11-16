@@ -162,10 +162,10 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
           var color = (L==0?"blue":"ivory")
-          if (document.getElementById("POP").clicked) { // ?POP in url
+          if (document.getElementById("POP").checked) { // ?POP in url
             color = (pop<500 ? "dodgerblue" : pop>100000 ? "tomato" : pop>20000 ? "orange" : "antiqueWhite")
           }  
-          if (document.getElementById("MHI").clicked) { // ?MHI in url
+          if (document.getElementById("MHI").checked) { // ?MHI in url
           //TBW  
           }
           return {clickable:true, fillColor:color, fillOpacity:0.2, strokeColor:'darkGray', strokeWeight:1}
