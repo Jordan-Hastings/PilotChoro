@@ -137,7 +137,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Carson City, Nevada',POP:2024,MHI:71.8}]
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      function initMap() {alert("v.131, "+calneva.length)
+      function initMap() {alert("v.131a, "+calneva.length)
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
@@ -162,10 +162,10 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
           var color = (L==0?"blue":"ivory")
-          if (true) { // ?POP chosen
+          if (document.getElementById("POP").clicked) { // ?POP in url
             color = (pop<500 ? "dodgerblue" : pop>100000 ? "tomato" : pop>20000 ? "orange" : "antiqueWhite")
           }  
-          if (false) { // ?MHI chosen
+          if (document.getElementById("MHI").clicked) { // ?MHI in url
           //TBW  
           }
           return {clickable:true, fillColor:color, fillOpacity:0.2, strokeColor:'darkGray', strokeWeight:1}
