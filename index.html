@@ -164,7 +164,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
         map.data.addListener('click', 
             function(event) {
               var L = calneva.length;
-              function nameLU() { while(--L>0) if calneva[L].Name == name) break; return L }
+              function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
               var name = event.feature.getProperty("Name"); nameLU(); alert(name+" "+calneva[L].POP)
             }
         )
