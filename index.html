@@ -60,7 +60,8 @@
     <script>
       function hideshow(th) { //alert("hideshow "+th.checked)
         map.data.setStyle((feature) => {if (feature.getProperty("Name").indexOf("Tahoe")>0) { //return {fillOpacity:(th.checked?1:0)}})
-          var style = map.data.getStyle(); style.fillOpacity = (th.checked?1:0); return style
+          var style = map.data.getStyle(); console.log(style);
+          style.fillColor = 'blue'; style.fillOpacity = (th.checked?1:0); style.strokeWeight = 1; return style
           }
         })
       }
@@ -70,11 +71,11 @@
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
-        if (paramsString.indexOf("POP")>0) document.getElementById("POP").selected = true;
-        if (paramsString.indexOf("MHI")>0) document.getElementById("MHI").selected = true;
+        if (paramsString.indexOf("POP")>0) document.getElementById("POP").checked = true;
+        if (paramsString.indexOf("MHI")>0) document.getElementById("MHI").checked = true;
         map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(37, -120),
-          zoom: 6,
+          zoom: 6, zoomControl: true,
           mapTypeId: 'terrain'
         });
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/~lake-tahoe_818.geojson';
