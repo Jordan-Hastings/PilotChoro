@@ -137,7 +137,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Carson City, Nevada',POP:2024,MHI:71.8}]
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      function initMap() {alert("v.129, "+calneva.length)
+      function initMap() {alert("v.130, "+calneva.length)
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
@@ -161,7 +161,13 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
   //map.data.forEach((feature) => { alert(feature.getId()); console.log(feature.getProperties())}); 
     // console.log(fc.features[0])}) //overrideStyle(f.features[0], {fillColor:"blue"}))})
 
-        map.data.addListener('click', function(event) {alert(event.feature.getProperty("Name"))})
+        map.data.addListener('click', 
+            function(event) {
+              var L = calneva.length;
+              function nameLU() { while(--L>0) if calneva[L].Name == name) break; return L }
+              var name = event.feature.getProperty("Name"); nameLU(); alert(name+" "+calneva[L].POP)
+            }
+        )
 /*
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/CalNeva-County.kml';
       var src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/lake-tahoe_818.kml';
