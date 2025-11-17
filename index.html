@@ -137,7 +137,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Carson City, Nevada',POP:2024,MHI:71.8}]
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      function initMap() {alert("v.131b, "+calneva.length)
+      function initMap() {alert("v.131c, "+calneva.length)
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
@@ -161,9 +161,9 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           var L = calneva.length;
           function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
-          var color = (L==0?"blue":"ivory")
+          var color = (L==0?"blue":"white")
           if (document.getElementById("POP").checked) { // ?POP in url
-            color = (pop<500 ? "dodgerblue" : pop>150000 ? "crimson": pop>100000 ? "tomato" : pop>20000 ? "orange" : "antiqueWhite")
+            color = (pop<50 ? "dodgerblue" : pop>150000 ? "crimson": pop>100000 ? "tomato" : pop>10000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite")
           }  
           if (document.getElementById("MHI").checked) { // ?MHI in url
             color = (mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite")
@@ -180,7 +180,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           function(event) {
             var L = calneva.length;
             function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
-            var name = event.feature.getProperty("Name"); nameLU(); alert(name+" POP:"+calneva[L].POP+" MHI:"+calneva[L].MHI)
+            var name = event.feature.getProperty("Name"); nameLU(); alert(name+" POP/sqmi:"+calneva[L].POP+" MHI[$k]:"+calneva[L].MHI)
           }
         )
 /*
