@@ -51,6 +51,8 @@
           <p><u>Themes</u>
             <br><input type="radio" id="POP" name=Theme disabled> Population / SqMi
             <br><input type="radio" id="MHI" name=Theme disabled> Median HH_Income
+          <p><u>Symbols</u>
+            <div id="Symbs"> </div>
         </td>
         <td> <div id="map"></div></td>
       </tr>
@@ -139,7 +141,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 //*/
       var map;
     //var src = 'https://developers.google.com/maps/documentation/javascript/examples/kml/westcampus.kml';
-      function initMap() {alert("v.131f, "+calneva.length)
+      function initMap() {alert("v.131g, "+calneva.length)
         const paramsString = window.location.search; //console.log("at initMap() ", paramsString)
         if (paramsString.indexOf("A1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/Alameda1-County.kml';
         if (paramsString.indexOf("C1")>0) src = 'https://raw.githubusercontent.com/Jordan-Hastings/Choro-Pilot/refs/heads/main/centerPt1.kml';
@@ -164,13 +166,20 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
           var color = (L==0?"blue":"white")
-          if (document.getElementById("POP").checked)
-           color = (pop<50 ? "dodgerblue" : pop>150000 ? "crimson": pop>100000 ? "tomato" : pop>10000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite")
-          if (document.getElementById("MHI").checked)
-           color = (mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite")
+          if (document.getElementById("POP").checked) {
+            color = (pop<50 ? "dodgerblue" : pop>150000 ? "crimson": pop>100000 ? "tomato" : pop>10000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite")
+            postSymbols('pop<50 ? "dodgerblue" : pop>150000 ? "crimson": pop>100000 ? "tomato" : pop>10000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite"')
+          }
+          if (document.getElementById("MHI").checked) {
+            color = (mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite")
+            postSymbols('mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite"')
+          }
           return {clickable:true, fillColor:color, fillOpacity:0.2, strokeColor:'darkGray', strokeWeight:1}
         }
-  
+
+        postSymbols(txt) {
+          document.getElementById("Symbs").innerHTML = txt.replace(":","\n")
+        }
   //map.data.setStyle((feature) => { return {clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5}});
   //map.data.setStyle( { clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5 } );
   //map.data.forEach((feature) => { alert(feature.getId()); console.log(feature.getProperties())}); 
