@@ -178,7 +178,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
         }
 
         function postSymbols(txt) {
-          var i = txt.indexOfLast(":"); txt = txt.slice(0,i+1)+"else "+txt.slice(i+1)
+          var i = txt.lastIndexOf(":"); txt = txt.slice(0,i+1)+"else "+txt.slice(i+1)
           document.getElementById("Symbs").innerHTML = txt.replace(":","<br>")
         }
   //map.data.setStyle((feature) => { return {clickable:(url.indexOf("lake")+1), fillColor:'blue', fillOpacity:0.02, strokeColor:(url.indexOf("lake")>0?'blue':'black'), strokeOpacity:0.5, strokeWeight:0.5}});
@@ -190,7 +190,7 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
           function(event) {
             var L = calneva.length;
             function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
-            var name = event.feature.getProperty("Name"); nameLU(); alert(name+" POP/sqmi:"+calneva[L].POP+" MHI[$k]:"+calneva[L].MHI)
+            var name = event.feature.getProperty("Name"); nameLU(); alert(name+": POP/sqmi = "+calneva[L].POP+", MHI[$k] = "+calneva[L].MHI)
           }
         )
 /*
