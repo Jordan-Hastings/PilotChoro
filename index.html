@@ -189,7 +189,7 @@ const calneva = [{Name:'Alameda County, California',POP:2241,MHI:126.2},
           function(event) {
             var L = calneva.length;
             function nameLU() { while(--L>0) if (calneva[L].Name == name) break; return L }
-            var name = event.feature.getProperty("Name"); nameLU(); alert(name+": POP/sqmi = "+calneva[L].POP+", MHI[$k] = "+calneva[L].MHI)
+            var name = event.feature.getProperty("Name"); nameLU(); alert(name+": POP/sqmi = "+calneva[L].POP+", MHI[$000] = "+calneva[L].MHI)
           }
         )
 /*
