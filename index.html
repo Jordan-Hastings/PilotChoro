@@ -171,7 +171,7 @@ const calneva = [{Name:'Alameda County, California',POP:2241,MHI:126.2},
           }
           if (document.getElementById("MHI").checked) {
             color = (mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite")
-            postSymbols('mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>150 ? "darkGreen" : mhi>100 ? "green" : "antiqueWhite"')
+            postSymbols('mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>120 ? "darkGreen" : mhi>90 ? "green" : "antiqueWhite"')
           }
           return {clickable:true, fillColor:color, fillOpacity:0.2, strokeColor:'darkGray', strokeWeight:1}
         }
