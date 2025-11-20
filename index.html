@@ -166,8 +166,8 @@ const calneva = [{Name:'Alameda County, California',POP:2241,MHI:126.2},
           var name = feature.getProperty("Name"); nameLU(); var pop = calneva[L].POP, mhi = calneva[L].MHI;
           var color = (L==0?"blue":"white")
           if (document.getElementById("POP").checked) {
-            color = (pop<5 ? "dodgerblue" : pop>15000 ? "crimson": pop>10000 ? "tomato" : pop>1000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite")
-            postSymbols('pop<5 ? "dodgerblue" : pop>15,000 ? "crimson": pop>10,000 ? "tomato" : pop>1000 ? "orange" : pop>100 ? "yellow" :"antiqueWhite"')
+            color = (pop<5 ? "dodgerblue" : pop>10000 ? "crimson": pop>1000 ? "tomato" : pop>250 ? "orange" : pop>100 ? "yellow" :"antiqueWhite")
+            postSymbols('pop<5 ? "dodgerblue" : pop>10,000 ? "crimson": pop>1,000 ? "tomato" : pop>250 ? "orange" : pop>100 ? "yellow" :"antiqueWhite"')
           }
           if (document.getElementById("MHI").checked) {
             color = (mhi<60 ? "crimson" : mhi<75 ? "pink" : mhi>105 ? "darkGreen" : mhi>90 ? "lightGreen" : "antiqueWhite")
