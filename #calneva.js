@@ -74,3 +74,4 @@ const calneva = [{Name:'Lake Tahoe',POP:0,MHI:0},
 {Name:'Washoe County, Nevada',POP:202,MHI:85.6},
 {Name:'White Pine County, Nevada',POP:8,MHI:72.3},
 {Name:'Carson City, Nevada',POP:2024,MHI:71.8}]
+
